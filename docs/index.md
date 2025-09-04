@@ -1,16 +1,13 @@
-fromager
-========
+# Fromager
 
-Fromager is a tool for completely re-building a dependency tree of
-Python wheels from source.
+Fromager is a tool for completely re-building a dependency tree of Python wheels from source.
 
-The goals are to support guaranteeing
+The goals are to support guaranteeing:
 
-1. The `binary package
-   <https://packaging.python.org/en/latest/glossary/#term-Built-Distribution>`__
+1. The [binary package](https://packaging.python.org/en/latest/glossary/#term-Built-Distribution)
    someone is installing was built from source in a known build environment
    compatible with their own environment
-2. All of the package’s dependencies were also built from source -- any
+2. All of the package's dependencies were also built from source -- any
    binary package installed will have been built from source
 3. All of the build tools used to build these binary packages will
    also have been built from source
@@ -23,22 +20,27 @@ behavior that works for most PEP-517 compatible packages, but support
 overriding all of the actions for special cases, without encoding
 those special cases directly into fromager.
 
-.. toctree::
-   :maxdepth: 2
+## Quick Start
 
-   using.md
-   getting-started.rst
-   customization.md
-   how-tos/index.rst
-   hooks.rst
-   files.md
-   http-retry.md
-   config-reference.rst
-   cli.rst
-   develop.md
+Get started with Fromager in just a few steps:
 
-What's with the name?
----------------------
+```bash
+pip install fromager
+fromager --help
+```
+
+For detailed usage instructions, see [Using Fromager](using.md).
+
+## Documentation Overview
+
+- **[Getting Started](getting-started.md)** - Installation and basic usage
+- **[Using Fromager](using.md)** - Comprehensive usage guide
+- **[Configuration](customization.md)** - Customizing Fromager for your needs
+- **[How-To Guides](how-tos/index.md)** - Step-by-step tutorials
+- **[Hooks](hooks.md)** - Extending Fromager with custom hooks
+- **[API Reference](api/)** - Complete API documentation
+
+## What's with the name?
 
 Python's name comes from Monty Python, the group of comedians. One of
 their skits is about a cheese shop that has no cheese in stock. The
@@ -46,5 +48,5 @@ original Python Package Index (pypi.org) was called The Cheeseshop, in
 part because it hosted metadata about packages but no actual
 packages. The wheel file format was selected because cheese is
 packaged in wheels. And
-"`fromager <https://en.wiktionary.org/wiki/fromager>`__" (*fro mah jay*) is the French
+"[fromager](https://en.wiktionary.org/wiki/fromager)" (*fro mah jay*) is the French
 word for someone who makes or sells cheese.

@@ -1,0 +1,121 @@
+site_name: Fromager
+site_description: A tool for bootstrapping Python package build environments
+site_url: https://python-wheel-build.github.io/fromager/
+repo_url: https://github.com/python-wheel-build/fromager
+repo_name: python-wheel-build/fromager
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Using Fromager: using.md
+  - Configuration:
+    - Config Reference: config-reference.md
+    - Customization: customization.md
+    - Files: files.md
+  - How-Tos:
+    - how-tos/index.md
+    - Bootstrap with Constraints: how-tos/bootstrap-constraints.md
+    - Build from Git Repository: how-tos/build-from-git-repo.md
+    - Using Containers: how-tos/containers.md
+    - Multiple Versions: how-tos/multiple-versions.md
+    - Parallel Builds: how-tos/parallel.md
+    - Pre-release Versions: how-tos/pre-release-versions.md
+    - Repeatable Builds: how-tos/repeatable-builds.md
+  - Development:
+    - Development Guide: develop.md
+    - Hooks: hooks.md
+    - HTTP Retry: http-retry.md
+  - API Reference:
+    - CLI: cli.md
+    - API: api/
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - navigation.footer
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - gen-files:
+      scripts:
+        - scripts/gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - section-index
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            # Docstrings
+            docstring_style: sphinx
+            docstring_options:
+              ignore_init_summary: true
+            # Signatures/annotations
+            show_signature_annotations: true
+            signature_crossrefs: true
+            # Additional
+            show_source: false
+            show_bases: true
+            show_inheritance_diagram: false
+            members_order: source
+            heading_level: 2
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-username/fromager
+  version:
+    provider: mike
+
+extra_css:
+  - stylesheets/extra.css

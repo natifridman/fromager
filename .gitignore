@@ -32,5 +32,8 @@ __pycache__/
 /docs/_build/
 /docs/example/bootstrap-output
 
+# MkDocs build output
+/site/
+
 /.mypy_cache/
 .skip-coverage

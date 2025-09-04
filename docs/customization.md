@@ -321,7 +321,7 @@ requires = ["setuptools>=68.0.0", "torch", "triton"]
 
 ## Override plugins
 
-Override plugins are documented in [the reference guide](hooks.rst).
+Override plugins are documented in [the reference guide](hooks.md).
 
 ## Canonical distribution names
 

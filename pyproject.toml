@@ -75,11 +75,13 @@ test = [
     "hatch-vcs",
 ]
 docs = [
-    "sphinx",
-    "sphinx-click",
-    "myst-parser",
-    "sphinx-rtd-theme",
-    "autodoc-pydantic",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "mkdocs-click",
+    "mkdocs-gen-files",
+    "mkdocs-literate-nav",
+    "mkdocs-section-index",
+    "mike",  # for versioning
 ]
 
 [project.urls]
